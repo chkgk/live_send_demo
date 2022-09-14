@@ -1,0 +1,38 @@
+{{ block title }}
+    Page title
+{{ endblock }}
+
+{{ block scripts }}
+    <script>
+
+        var output = document.getElementById('output-box');
+        
+          function liveRecv(data) {
+            // console.log("click count:", data); 
+            output.innerHTML = data;
+          }
+        function sendValue() {
+            liveSend('click');
+          }
+    </script>
+{{ endblock scripts }}
+
+{{ block content }}
+    <span id="output-box">
+        
+    </span>
+
+    <div id="outer-box">
+        <div id="code-box">
+            Here is the code.
+        </div>
+        <div id="shop-box">
+            This is the shop!
+        </div>
+    </div>
+
+    <button type="button" onclick="sendValue()">Send</button>
+    {{ formfields }}
+    {{ next_button }}
+
+{{ endblock }}
